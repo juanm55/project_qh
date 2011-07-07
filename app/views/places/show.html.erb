@@ -1,0 +1,17 @@
+<h1><%= @place.name%></h1>
+
+<br/>
+
+<p><%= @place.description%>
+</p>
+
+<p>Nuestras categorizaciones:
+
+<ul>
+  <li>Nuestro sitio esta especialmente recomendado si buscas <%= @place.cplace.name %></li>
+  <li>Te recomendamos traer aproximadamente <%= number_to_currency(@place.cmoney.name) %> para que disfrutes de una buena gama de nuestros servicios</li>
+  <li>Nuestro horario es mayormente <%= @place.copen.name %></li>
+</ul>
+
+Te esperamos.
+</p>

@@ -1,0 +1,12 @@
+<h1><%= @cplace.name%></h1>
+
+<p>
+  <strong>Descripción:</strong><br/>
+  <%=h @cplace.description %>
+</p>
+
+<p>
+  <%= link_to "Editar", edit_cplace_path(@animal) %> |
+  <%= link_to "Destruir", @cplace, :confirm => 'Seguro que desea destruir esta categoría?', :method => :delete %> |
+  <%= link_to "View All", cplaces_path %>
+</p>

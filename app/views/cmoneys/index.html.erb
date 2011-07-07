@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+
+  </tr>
+  <% for cmoney in @cmoneys %>
+    <tr>
+      <td><%=h cmoney.name %></td>
+      <td><%= link_to "Edit", edit_cmoney_path(cmoney) %></td>
+      <td><%= link_to "Destroy", cmoney, :confirm => 'Está seguro de que quiere destruir esta categoría?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Crear nueva categoría", new_cmoney_path %></p>

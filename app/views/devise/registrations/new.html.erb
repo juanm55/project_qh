@@ -1,0 +1,28 @@
+<h2>Nuevo Usuario</h2>
+
+<p>Ser un usuario de queHago.co te trae beneficios como:</p>
+
+<ul>
+  <li>Calificar los Sitios que visites.</li>
+  <li>Recomendar sitios para egregar a la base de datos.</li>
+  <li>Crear y guardar tus planes.</li>
+</ul>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <!-- :email en vez de "Email"-->
+  <p><%= f.label "Email"  %><br />         
+  <%= f.email_field :email %></p>
+  
+  <!-- :password en vez de "Clave"-->
+  <p><%= f.label "Clave" %><br />
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label "Confirmación de clave" %><br />
+  <%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.submit "Registro" %></p>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

@@ -1,0 +1,9 @@
+<% semantic_form_for @cplace do |f| %>
+<% f.inputs do %>
+    <%= f.input :name,                    :label => 'Nombre'%>
+    <%= f.input :description,             :label => 'Descripción'%>
+  <% end %>
+<%= f.buttons do %>
+      <%= f.commit_button 'Crear' %>
+<% end %>
+<% end %>

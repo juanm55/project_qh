@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+
+  </tr>
+  <% for cplace in @cplaces %>
+    <tr>
+      <td><%=h cplace.name %></td>
+      <td><%=h cplace.description %></td>
+      <td><%= link_to "Show", cplace %></td>
+      <td><%= link_to "Edit", edit_cplace_path(cplace) %></td>
+      <td><%= link_to "Destroy", cplace, :confirm => 'Está seguro de que quiere destruir esta categoría?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Crear nueva categoría", new_cplace_path %></p>

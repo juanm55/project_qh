@@ -1,0 +1,19 @@
+<header>
+    <% logo = image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+    <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+        <% if user_signed_in? %>
+            <li>Hola <%= current_user.email %><%= link_to "Cerrar Sesión", destroy_user_session_path %></li>
+            <li><%= link_to "Mis sitios", destroy_user_session_path %></li>
+        <% else %>
+            <li><%= link_to "Registro", new_user_registration_path %></li>
+            <li><%= link_to "Entrar", new_user_session_path %></li>
+        <% end %>
+      
+        <li><%= link_to "Inicio", root_path %></li>
+        <li><%= link_to "Contacto", contact_path %></li>
+        <li><%= link_to "Acerca de nosotros", about_path %></li>
+    </ul>
+  </nav>
+</header>

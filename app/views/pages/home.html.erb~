@@ -1,0 +1,8 @@
+    <h1>queHago.co</h1>
+    <p>
+      primera pagina de prueba para el home de quehago.co
+    </p>
+    <p>Ahora usando Layouts para eliminar la redundancia de las paginas!</p>
+    </br>
+    </br>
+    <%= link_to "Registrate ahora!", '#', :class => "signup_button round" %>

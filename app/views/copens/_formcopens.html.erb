@@ -1,0 +1,8 @@
+<% semantic_form_for @copen do |f| %>
+<% f.inputs do %>
+    <%= f.input :name,                    :label => 'Nombre'%>
+  <% end %>
+<%= f.buttons do %>
+      <%= f.commit_button 'Crear' %>
+<% end %>
+<% end %>

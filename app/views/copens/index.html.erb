@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Nombre</th>
+
+  </tr>
+  <% for copen in @copens %>
+    <tr>
+      <td><%=h copen.name %></td>
+      <td><%= link_to "Edit", edit_copen_path(copen) %></td>
+      <td><%= link_to "Destroy", copen, :confirm => 'Está seguro de que quiere destruir esta categoría?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Crear nueva categoría", new_copen_path %></p>
