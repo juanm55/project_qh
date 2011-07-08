@@ -1,2 +1,39 @@
 algo mas para probar las brancehs
 
+
+
+
+para lo de las branches gordo.... 
+
+
+git branch mierda     => para crear la branch mierda
+
+
+git checkout mierda   => cambiar a la branch mierda....
+
+
+se hacen las modificaciones...
+
+
+se mira que todo este funcionando
+
+
+git checkout master    => volver a la master
+
+
+git merge mierda      => juntar la mierda con la master
+
+
+git add .             => poner a git a que vigile todos los archivos de la master
+
+
+git commit -a -m "despues de juntar la mierda con la master"   =>subir la master local (que esta con la mierda) para github
+
+
+.....
+
+
+para descargar de la github....
+
+
+git pull git@github.com:juanm55/project_qh.git   => git pull... con el identificador de read-write que hay en la pagina.... y ya.... chao pues... cuando vea esto me escribe, es un examen para ver que tanto lee... mwhahaha!
