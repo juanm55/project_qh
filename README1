@@ -29,7 +29,7 @@ git add .             => poner a git a que vigile todos los archivos de la maste
 
 git commit -a -m "despues de juntar la mierda con la master"   =>subir la master local (que esta con la mierda) para github
 
-
+git push              => para subirlo a github
 .....
 
 
