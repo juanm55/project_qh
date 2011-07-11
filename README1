@@ -1,39 +1,41 @@
-algo mas para probar las brancehs
+algo mas para probar las branches
+
+primero ir al directorio de la app
+
+luego:
 
 
+git branch nombre_deseado => para crear la branch nombre_deseado
 
 
-para lo de las branches gordo.... 
+git checkout nombre_deseado => cambiar a la branch nombre_deseado
 
 
-git branch mierda     => para crear la branch mierda
-
-
-git checkout mierda   => cambiar a la branch mierda....
-
-
-se hacen las modificaciones...
-
+se hacen las modificaciones
 
 se mira que todo este funcionando
 
 
-git checkout master    => volver a la master
+git checkout master => volver a la master
 
 
-git merge mierda      => juntar la mierda con la master
+git merge nombre_deseado => juntar nombre_deseado con la master
 
 
-git add .             => poner a git a que vigile todos los archivos de la master
+git add . => poner a git a que vigile todos los archivos de la master
 
 
-git commit -a -m "despues de juntar la mierda con la master"   =>subir la master local (que esta con la mierda) para github
-
-git push              => para subirlo a github
-.....
+git commit -a -m "despues de juntar nombre_deseado con la master" =>subir la master local (que esta con nombre_deseado) para github
 
 
-para descargar de la github....
+git push => para subirlo a github
 
 
-git pull git@github.com:juanm55/project_qh.git   => git pull... con el identificador de read-write que hay en la pagina.... y ya.... chao pues... cuando vea esto me escribe, es un examen para ver que tanto lee... mwhahaha!
+para descargar de la github
+
+
+git pull git@github.com:juanm55/project_qh.git => git pull... con el identificador de read-write que hay en la pagina
+
+Juambo! test owned!
+
+C YA
