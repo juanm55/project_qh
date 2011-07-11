@@ -11,6 +11,9 @@ class CreatePlaces < ActiveRecord::Migration
       t.timestamps
     end
     add_index :places, :user_id           #para crear los indices por usuario
+    add_index :places, :cplace_id         #para crear los indices por usuario
+    add_index :places, :cmoney_id         #para crear los indices por usuario
+    add_index :places, :copen_id          #para crear los indices por usuario
   end
 
   def self.down

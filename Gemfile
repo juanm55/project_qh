@@ -2,20 +2,22 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
-
+#comunicacion con la DB, analizar gem => mysql2
 gem 'mysql'                   #controlador de la DB
-gem "devise", "~> 1.4.0"      #para controlar las autenticaciones de los usuarios
-gem "formtastic", "~> 1.2.4"  #para los formularios.
-gem "validation_reflection", "~> 1.0.0"     #para reflejar las validaciones creadas en los modelos sobre los formularios que se usan para poblar las DB
+
+#Autenticaciones
+gem "devise", "~> 1.4.0"
+
+#para los formularios
+gem "formtastic", "~> 1.2.4"                #para los formularios. "semantic_form_for"
+gem "validation_reflection", "~> 1.0.0"     #para reflejar las validaciones creadas en los modelos
+
+#cotrola las paginaciones cuando hay demasiados items
+gem "will_paginate", "~> 3.0.pre2"
+
 group :develompent do
     gem "annotate-models", "~> 1.0.4"
 end
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'

@@ -5,8 +5,7 @@ Qh::Application.routes.draw do
   resources :cmoneys
   resources :copens
   
-  #get "places/index"
-  #match '/places/new',  :to => 'places#new', :as => :newplace
+  resources :comments
 
   devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   

@@ -1,0 +1,11 @@
+h1. qh
+
+Bienvenido al proyecto de QH!
+
+h2. Team mates: 
+
+* Juan Manuel López, aka Juambo 
+* Felipe Gómez, aka Pipe 
+* Juan Eduardo Escobar, aka Gordo.
+
+Bye.

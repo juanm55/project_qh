@@ -10,13 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110704014839) do
+ActiveRecord::Schema.define(:version => 20110709030344) do
 
   create_table "cmoneys", :force => true do |t|
     t.integer  "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "place_id"
+    t.string   "title"
+    t.string   "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["place_id"], :name => "index_comments_on_place_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "copens", :force => true do |t|
     t.string   "name"

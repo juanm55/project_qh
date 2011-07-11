@@ -9,7 +9,8 @@ class PlacesController < ApplicationController
   
   def show
     @place = Place.find(params[:id])
-    @title = "Categorias -> #{@place.name}"
+    @title = @place.name
+    @comment = @place.comments.paginate(:page => params[:page])
   end
   
   #############

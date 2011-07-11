@@ -5,13 +5,27 @@
 <p><%= @place.description%>
 </p>
 
-<p>Nuestras categorizaciones:
+<p>Nuestras categorizaciones:</p>
 
 <ul>
-  <li>Nuestro sitio esta especialmente recomendado si buscas <%= @place.cplace.name %></li>
+  <li>Nuestro sitio está especialmente recomendado si buscas <%= @place.cplace.name %></li>
   <li>Te recomendamos traer aproximadamente <%= number_to_currency(@place.cmoney.name) %> para que disfrutes de una buena gama de nuestros servicios</li>
   <li>Nuestro horario es mayormente <%= @place.copen.name %></li>
 </ul>
 
-Te esperamos.
+<p>Te esperamos.</p>
+
+<% if @place.comments.empty?%>
+  <p>Sé el primero en visitar <%= @place.name %> y escribir un comentario sobre tu experiencia!</p>
+<% end %>
+
+<% unless @place.comments.empty? %>
+  <h1>Comentarios de los usuarios</h1>
+  <table class="comments" summary="Comentarios de los usuarios">
+  <%= render @comments %>
+  </table>
+  <% if false%> <%= will_paginate @comments %> <% end %>
+<% end %>
+
+
 </p>

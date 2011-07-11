@@ -23,7 +23,7 @@ class CplacesController < ApplicationController
   
   def create
     @cplace = Cplace.new(params[:cplace])
-    @cplace = current_user.id
+    @cplace.user_id = current_user.id
     if @cplace.save
       flash[:notice] = 'Categoria de sitio creada.'
       redirect_to @cplace

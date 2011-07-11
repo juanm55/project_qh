@@ -22,6 +22,8 @@ class Place < ActiveRecord::Base
   belongs_to :cmoney
   belongs_to :copen
   
+  has_many :comments, :dependent => :destroy
+  
   
   #algunas valideaciones basicas para que todo funcione
   validates :name,  :presence => true,
