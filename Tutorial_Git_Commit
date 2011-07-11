@@ -31,7 +31,7 @@ git commit -a -m "despues de juntar nombre_deseado con la master" =>subir la mas
 git push => para subirlo a github
 
 
-para descargar de la github
+para descargar de github.com
 
 
 git pull git@github.com:juanm55/project_qh.git => git pull... con el identificador de read-write que hay en la pagina
