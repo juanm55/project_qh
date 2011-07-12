@@ -16,7 +16,7 @@ gem "validation_reflection", "~> 1.0.0"     #para reflejar las validaciones crea
 gem "will_paginate", "~> 3.0.pre2"
 
 group :develompent do
-    gem "annotate-models", "~> 1.0.4"
+  gem "annotate", "~> 2.4.0"
 end
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
