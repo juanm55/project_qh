@@ -19,6 +19,10 @@
   <p>Sé el primero en visitar <%= @place.name %> y escribir un comentario sobre tu experiencia!</p>
 <% end %>
 
+<% if user_signed_in?%>
+  <%= render 'shared/formcomment' %>
+<% end %>
+
 <% unless @place.comments.empty? %>
   <h1>Comentarios de los usuarios</h1>
   <table class="comments" summary="Comentarios de los usuarios">

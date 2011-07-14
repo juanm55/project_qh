@@ -4,6 +4,7 @@ es:
       not_found: "no encontrado"
       already_confirmed: "ya ha sido confirmado"
       not_locked: "no está bloqueado"
+      not_saved: "No se pudo crear el usuario"
 
   devise:
     sessions:

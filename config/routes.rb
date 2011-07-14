@@ -5,7 +5,7 @@ Qh::Application.routes.draw do
   resources :cmoneys
   resources :copens
   
-  resources :comments
+  resources :comments, :only => [:create, :destroy, :index, :edit]
 
   devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   
@@ -14,60 +14,54 @@ Qh::Application.routes.draw do
   
   root :to => 'pages#home'
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
-
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => "welcome#index"
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
 end
+#== Route Map
+# Generated on 12 Jul 2011 11:04
+#
+#                   places GET    /places(.:format)           {:action=>"index", :controller=>"places"}
+#                          POST   /places(.:format)           {:action=>"create", :controller=>"places"}
+#                new_place GET    /places/new(.:format)       {:action=>"new", :controller=>"places"}
+#               edit_place GET    /places/:id/edit(.:format)  {:action=>"edit", :controller=>"places"}
+#                    place GET    /places/:id(.:format)       {:action=>"show", :controller=>"places"}
+#                          PUT    /places/:id(.:format)       {:action=>"update", :controller=>"places"}
+#                          DELETE /places/:id(.:format)       {:action=>"destroy", :controller=>"places"}
+#                  cplaces GET    /cplaces(.:format)          {:action=>"index", :controller=>"cplaces"}
+#                          POST   /cplaces(.:format)          {:action=>"create", :controller=>"cplaces"}
+#               new_cplace GET    /cplaces/new(.:format)      {:action=>"new", :controller=>"cplaces"}
+#              edit_cplace GET    /cplaces/:id/edit(.:format) {:action=>"edit", :controller=>"cplaces"}
+#                   cplace GET    /cplaces/:id(.:format)      {:action=>"show", :controller=>"cplaces"}
+#                          PUT    /cplaces/:id(.:format)      {:action=>"update", :controller=>"cplaces"}
+#                          DELETE /cplaces/:id(.:format)      {:action=>"destroy", :controller=>"cplaces"}
+#                  cmoneys GET    /cmoneys(.:format)          {:action=>"index", :controller=>"cmoneys"}
+#                          POST   /cmoneys(.:format)          {:action=>"create", :controller=>"cmoneys"}
+#               new_cmoney GET    /cmoneys/new(.:format)      {:action=>"new", :controller=>"cmoneys"}
+#              edit_cmoney GET    /cmoneys/:id/edit(.:format) {:action=>"edit", :controller=>"cmoneys"}
+#                   cmoney GET    /cmoneys/:id(.:format)      {:action=>"show", :controller=>"cmoneys"}
+#                          PUT    /cmoneys/:id(.:format)      {:action=>"update", :controller=>"cmoneys"}
+#                          DELETE /cmoneys/:id(.:format)      {:action=>"destroy", :controller=>"cmoneys"}
+#                   copens GET    /copens(.:format)           {:action=>"index", :controller=>"copens"}
+#                          POST   /copens(.:format)           {:action=>"create", :controller=>"copens"}
+#                new_copen GET    /copens/new(.:format)       {:action=>"new", :controller=>"copens"}
+#               edit_copen GET    /copens/:id/edit(.:format)  {:action=>"edit", :controller=>"copens"}
+#                    copen GET    /copens/:id(.:format)       {:action=>"show", :controller=>"copens"}
+#                          PUT    /copens/:id(.:format)       {:action=>"update", :controller=>"copens"}
+#                          DELETE /copens/:id(.:format)       {:action=>"destroy", :controller=>"copens"}
+#                 comments POST   /comments(.:format)         {:action=>"create", :controller=>"comments"}
+#                  comment DELETE /comments/:id(.:format)     {:action=>"destroy", :controller=>"comments"}
+#         new_user_session GET    /login(.:format)            {:action=>"new", :controller=>"devise/sessions"}
+#             user_session POST   /login(.:format)            {:action=>"create", :controller=>"devise/sessions"}
+#     destroy_user_session GET    /logout(.:format)           {:action=>"destroy", :controller=>"devise/sessions"}
+#            user_password POST   /password(.:format)         {:action=>"create", :controller=>"devise/passwords"}
+#        new_user_password GET    /password/new(.:format)     {:action=>"new", :controller=>"devise/passwords"}
+#       edit_user_password GET    /password/edit(.:format)    {:action=>"edit", :controller=>"devise/passwords"}
+#                          PUT    /password(.:format)         {:action=>"update", :controller=>"devise/passwords"}
+# cancel_user_registration GET    /cancel(.:format)           {:action=>"cancel", :controller=>"devise/registrations"}
+#        user_registration POST   /(.:format)                 {:action=>"create", :controller=>"devise/registrations"}
+#    new_user_registration GET    /register(.:format)         {:action=>"new", :controller=>"devise/registrations"}
+#   edit_user_registration GET    /edit(.:format)             {:action=>"edit", :controller=>"devise/registrations"}
+#                          PUT    /(.:format)                 {:action=>"update", :controller=>"devise/registrations"}
+#                          DELETE /(.:format)                 {:action=>"destroy", :controller=>"devise/registrations"}
+#                  contact        /contact(.:format)          {:controller=>"pages", :action=>"contact"}
+#                    about        /about(.:format)            {:controller=>"pages", :action=>"about"}
+#                     root        /(.:format)                 {:controller=>"pages", :action=>"home"}

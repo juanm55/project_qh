@@ -1,9 +1,0 @@
-<%= semantic_form_for @comment do |f| %>
-  <%= f.inputs do %>
-    <%= f.input :title,         :label => "Título de tu comentario" %>
-    <%= f.input :content,       :label => "Comentario", :input_html => { :rows => 4} %>
-  <% end %>
-  <%= f.buttons do %>
-    <%= f.commit_button "Enviar"%>
-  <% end %>
-<% end %>

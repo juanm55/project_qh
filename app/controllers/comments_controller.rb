@@ -1,17 +1,9 @@
 class CommentsController < ApplicationController
 
-def new
-    @place = place
-    @title = "Nuevo Comentario"
-    @comment = Comment.new
-end
-
-#############
-
 def create
-  @place = place
-  @comment = Comment.new(params[:comment])
-  @comment.user_id = current_user.id
+  @comment = Comment.new(params[:newcomment])
+  #@comment.user_id = current_user.id
+  #@comment.place_id = @place.id
     if @comment.save
       redirect_to @place
     else
@@ -22,12 +14,6 @@ end
 #############
 
 def index
-  
-end
-
-#############
-
-def show
   
 end
 
