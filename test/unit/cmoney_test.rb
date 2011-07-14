@@ -6,3 +6,14 @@ class CmoneyTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: cmoneys
+#
+#  id         :integer(4)      not null, primary key
+#  name       :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

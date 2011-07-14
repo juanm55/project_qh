@@ -15,6 +15,8 @@ class Copen < ActiveRecord::Base
   
   has_many :places
   
+  default_scope :order => 'name'
+  
   validates :name,  :presence => true,
                     :uniqueness => { :case_sensitive => false}
 end

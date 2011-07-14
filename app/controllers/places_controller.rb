@@ -10,6 +10,12 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     @title = @place.name
+    if user_signed_in?
+      @newcomment = Comment.new(params[:newcomment])
+      @newcomment.place_id = @place.id
+      @newcomment.user_id = current_user.id 
+    end
+    
     @comment = @place.comments.paginate(:page => params[:page])
   end
   
@@ -24,6 +30,7 @@ class PlacesController < ApplicationController
   
   def create
     @place = Place.new(params[:place])
+    @place.user_id = current_user.id
     if @place.save
       flash[:notice] = "Sitio creado."
       redirect_to places_path

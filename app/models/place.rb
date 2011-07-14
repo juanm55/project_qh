@@ -24,6 +24,7 @@ class Place < ActiveRecord::Base
   
   has_many :comments, :dependent => :destroy
   
+  default_scope :order => 'name'
   
   #algunas valideaciones basicas para que todo funcione
   validates :name,  :presence => true,
