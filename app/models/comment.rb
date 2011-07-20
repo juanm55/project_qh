@@ -24,7 +24,7 @@ default_scope :order => 'comments.created_at DESC'
 validates_presence_of :title, :content#, :user_id, :place_id
 
 validates_length_of :content,
-                    :within => 20..200
+                    :within => 2..200
 
 validates_length_of :title,
                     :within => 4..20

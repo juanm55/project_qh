@@ -5,7 +5,7 @@ Qh::Application.routes.draw do
   resources :cmoneys
   resources :copens
   
-  resources :comments, :only => [:create, :destroy, :index, :edit]
+  resources :comments, :only => [:create, :destroy]#, :index]
 
   devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   
@@ -17,7 +17,7 @@ Qh::Application.routes.draw do
 
 end
 #== Route Map
-# Generated on 12 Jul 2011 11:04
+# Generated on 18 Jul 2011 17:56
 #
 #                   places GET    /places(.:format)           {:action=>"index", :controller=>"places"}
 #                          POST   /places(.:format)           {:action=>"create", :controller=>"places"}

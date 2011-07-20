@@ -23,13 +23,15 @@
   <%= render 'shared/formcomment' %>
 <% end %>
 
+<%if false%>
+
 <% unless @place.comments.empty? %>
   <h1>Comentarios de los usuarios</h1>
   <table class="comments" summary="Comentarios de los usuarios">
-  <%= render @comments %>
+  <%= render @place.comments %>
   </table>
   <% if false%> <%= will_paginate @comments %> <% end %>
 <% end %>
-
+<%end%>
 
 </p>

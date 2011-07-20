@@ -11,12 +11,14 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @title = @place.name
     if user_signed_in?
-      @newcomment = Comment.new(params[:newcomment])
-      @newcomment.place_id = @place.id
-      @newcomment.user_id = current_user.id 
+      @comment = @place.comments.build(:place_id => params[:id])
+      #if @comment.save
+       # @comment.update(:place_id => @place.id, :user_id => current_user.id)
+      #end
+#      @comment.save
     end
     
-    @comment = @place.comments.paginate(:page => params[:page])
+    #@comment = @place.comments.paginate(:page => params[:page])
   end
   
   #############
