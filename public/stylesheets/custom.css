@@ -1,31 +1,80 @@
+html {
+  margin-top:0px;
+  padding-top:0px;
+  margin-bottom: 0pt;
+  padding-top: 0pt;
+  padding-right: 0pt;
+  padding-left: 0pt;
+}
+
 .container {
-  width: 710px;
+  width: 950px;
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  padding-top: 0pt;
+  padding-right: 0pt;
+  padding-bottom: 0pt;
+  padding-left: 0pt;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;;
+  font-size: normal;
+  padding-top: 0pt;
+  margin-top:0pt;
 }
 
 body {
-  background: #cff;
+  background:#c52f24;
+  margin:0px;
+  padding:0px;
+  
+}
+
+h1 {
+  line-height:1;
+  font-weight:bold;
+  color:#111;
 }
 
 header {
-  padding-top: 20px;
+  padding-top: 0px;
+  background-color: #3a3a3a/*#565656*/;
 }
 
 header img {
   padding: 1em;
-  background: #fff;
+/*  background: #fff;*/
 }
 
 section {
-  margin-top: 1em;
-  font-size: 120%;
+  margin-top: 0.5em;
+  font-size: 100%;
   padding: 20px;
   background: #fff;
+  clear:right;
+  min-height:350px;
 }
 
 section h1 {
-  font-size: 200%;
+  font-size: 170%;
+  line-height: 80%;
 }
 
+/*Category selector for home page*/
+
+.float-right{
+  float:right;
+  padding-left:1em;
+}
+
+.float-left{
+  float:left;
+  padding-right:1em;
+}
+
+.float-left img, .float-right img{
+  margin-bottom:10px;
+}
 /* Links */
 
 a {
@@ -46,6 +95,7 @@ a:visited {
 
 nav {
   float: right;
+  font-size: 90%;
 }
 
 nav {
@@ -68,10 +118,11 @@ nav ul li {
 nav ul li a {
   padding: 0 5px;
   font-weight: bold;
+  color: #ADAD84;
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: #68684F;
 }
 
 nav ul li a:hover {
@@ -80,7 +131,7 @@ nav ul li a:hover {
 
 /* Sign up button */
 
-a.signup_button {
+/*a.signup_button {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -91,7 +142,7 @@ a.signup_button {
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
-}
+}*/
 
 /* Round corners */
 
@@ -104,9 +155,11 @@ a.signup_button {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  font-size: 80%;
+/*  width: 710px;*/
   margin-left: auto;
   margin-right: auto;
+  clear:both;
 }
 
 footer nav {
@@ -167,4 +220,3 @@ form.new_comment textarea {
   height: 4em;
   margin-bottom: 0;
 }
-
