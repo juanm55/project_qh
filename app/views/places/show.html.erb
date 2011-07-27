@@ -14,24 +14,3 @@
 </ul>
 
 <p>Te esperamos.</p>
-
-<% if @place.comments.empty?%>
-  <p>Sé el primero en visitar <%= @place.name %> y escribir un comentario sobre tu experiencia!</p>
-<% end %>
-
-<% if user_signed_in?%>
-  <%= render 'shared/formcomment' %>
-<% end %>
-
-<%if false%>
-
-<% unless @place.comments.empty? %>
-  <h1>Comentarios de los usuarios</h1>
-  <table class="comments" summary="Comentarios de los usuarios">
-  <%= render @place.comments %>
-  </table>
-  <% if false%> <%= will_paginate @comments %> <% end %>
-<% end %>
-<%end%>
-
-</p>

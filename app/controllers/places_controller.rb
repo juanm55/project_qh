@@ -10,17 +10,8 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     @title = @place.name
-    if user_signed_in?
-      @comment = @place.comments.build(:place_id => params[:id])
-      #if @comment.save
-       # @comment.update(:place_id => @place.id, :user_id => current_user.id)
-      #end
-#      @comment.save
-    end
-    
-    #@comment = @place.comments.paginate(:page => params[:page])
   end
-  
+    
   #############
   
   def new
