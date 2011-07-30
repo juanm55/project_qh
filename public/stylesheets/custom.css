@@ -156,11 +156,58 @@ footer {
   text-align: center;
   margin-top: 10px;
   font-size: 80%;
-/*  width: 710px;*/
   margin-left: auto;
   margin-right: auto;
   clear:both;
 }
+
+table {
+margin-left: auto;
+margin-right: auto;
+border: thin solid black;
+caption-side: bottom;
+border-collapse: collapse;
+}
+
+td, th {
+border: thin dotted gray;
+padding: 5px;
+}
+
+caption {
+font-style: italic;
+padding-top: 8px;
+}
+
+/*estilos para el listado bonito de los sitios*/
+
+.listadobonito{
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.indplacesdescr{
+  font-size:90%;
+  margin-right:15em;
+
+}
+
+.indplacesmoney, .indplacesopen{
+  float: right;
+  padding:0px;
+  font-size:140%;
+  color:gray;
+  margin:0px;
+  text-align:right;
+  
+}
+
+.listadobonito h3{
+  margin:0px;
+  padding:0px;
+}
+/*de aca hacia abajo hay que revisar la funcionalidad*/
 
 footer nav {
   float: none;

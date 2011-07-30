@@ -1,4 +1,5 @@
-<table>
+<!--visualizacion para los admin-->
+<table summary="In this table we show the different places that match a certain search criteria">
   <tr>
     <th>Nombre</th>
     <th>Cat. Sitio</th>
@@ -20,3 +21,14 @@
 </table>
 
 <p><%= link_to "Crear nuevo sitio", new_place_path %></p>
+
+
+<h2>Sitios que concuerdan con tus criterios de búsqueda:</h2>
+<div class="listadobonito">
+  <% for place in @places %>
+    <p class="indplacesmoney"><%= number_to_currency(place.cmoney.name)%> <br /><%= place.copen.name%></p>
+    <h3 class="indplacesname"><%=link_to place.name, place%></h3>
+    <p class="indplacesdescr"><%= place.description[0..100] %></p>
+  <% end %>
+  
+</div>  

@@ -44,7 +44,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @place.destroy
     flash[:notice] = "Sitio Destruido."
-    redirect_to cplaces_path
+    redirect_to places_path
   end
   
 ###############
