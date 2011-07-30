@@ -21,6 +21,13 @@ Qh::Application.configure do
   # See everything in the log (default is :info)
   # config.log_level = :debug
 
+  config.action_mailer.default_url_options = {host: 'www.quehago.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = {
+    location: '/usr/sbin/sendmail',
+    arguments: "-i -t -f contacto@quehago.co"
+  }
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
 

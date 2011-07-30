@@ -1,0 +1,9 @@
+<%= form_tag dispatch_email_path, method: :post do %>
+  <%= label_tag "user_info[name]", "Nombre" %><br/>
+  <%= text_field_tag "user_info[name]" %><br />
+  <%= label_tag "user_info[email]", "Email" %><br/>
+  <%= text_field_tag "user_info[email]" %><br />
+  <%= label_tag "user_info[message]", "Mensaje" %><br/>
+  <%= text_area_tag "user_info[message]", "", size: "60x10" %><br />
+  <%= submit_tag "Enviar" %>
+<% end %>

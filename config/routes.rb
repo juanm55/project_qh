@@ -8,6 +8,7 @@ Qh::Application.routes.draw do
   devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register" }
   
   match '/contact', :to => 'pages#contact'
+  match "dispatch_email", to: "pages#dispatch_email", as: "dispatch_email", method: :post
   match '/about',   :to => 'pages#about'
   
   root :to => 'pages#home'
