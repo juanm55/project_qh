@@ -1,19 +1,21 @@
 
 <div class="float-right">
   <% logo = image_tag("rumba.png", :alt => "Rumba", :class => "round") %>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, {:controller => 'places', :action => 'index', :category => "rumba"} %>
+  
   <br />
   <% logo = image_tag("turistico.png", :alt => "Turístico", :class => "round") %>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, {:controller => 'places', :action => 'index', :category => "turistico"} %>
     
 </div>
 
 
 <div class="float-left">
   <% logo = image_tag("gastronomia.png", :alt => "Gastronomía", :class => "round") %>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, {:controller => 'places', :action => 'index', :category => "gastronomia"} %>
+
   <br />
   <% logo = image_tag("cultural.png", :alt => "Cultural", :class => "round") %>
-  <%= link_to logo, root_path %>
+  <%= link_to logo, {:controller => 'places', :action => 'index', :category => "cultural"} %>
     
 </div>

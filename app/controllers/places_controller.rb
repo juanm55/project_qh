@@ -2,7 +2,25 @@ class PlacesController < ApplicationController
   
   def index
     @title = "Sitios"
-    @places = Place.all
+    
+    case params[:category]
+    
+    when 'rumba'
+      @places = Place.find_all_by_cplace_id(1)
+      
+    when 'cultural'
+      @places = Place.find_all_by_cplace_id(2)
+      
+    when 'gastronomia'
+      @places = Place.find_all_by_cplace_id(3)
+      
+    when 'turistico'
+      @places = Place.find_all_by_cplace_id(4)
+      
+    else 
+      @places = Place.all
+    end
+    
   end
   
 ###############  
@@ -23,7 +41,7 @@ class PlacesController < ApplicationController
   
   def create
     @place = Place.new(params[:place])
-    @place.user_id = current_user.id
+    #@place.user_id = current_user.id
     if @place.save
       flash[:notice] = "Sitio creado."
       redirect_to places_path
