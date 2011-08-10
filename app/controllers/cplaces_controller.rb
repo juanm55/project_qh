@@ -1,5 +1,5 @@
 class CplacesController < ApplicationController
-  
+  before_filter :authenticate_user!
   def index
     @cplaces = Cplace.all
     @title = "Categorias de Sitios"
