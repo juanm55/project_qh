@@ -1,4 +1,5 @@
 class CmoneysController < ApplicationController
+  before_filter :authenticate_user!
   
   def index
     @cmoneys = Cmoney.all
