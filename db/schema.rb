@@ -10,25 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110709030344) do
+ActiveRecord::Schema.define(:version => 20110822024402) do
 
   create_table "cmoneys", :force => true do |t|
     t.integer  "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "place_id"
-    t.string   "title"
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["place_id"], :name => "index_comments_on_place_id"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "copens", :force => true do |t|
     t.string   "name"
@@ -54,6 +42,9 @@ ActiveRecord::Schema.define(:version => 20110709030344) do
     t.datetime "updated_at"
   end
 
+  add_index "places", ["cmoney_id"], :name => "index_places_on_cmoney_id"
+  add_index "places", ["copen_id"], :name => "index_places_on_copen_id"
+  add_index "places", ["cplace_id"], :name => "index_places_on_cplace_id"
   add_index "places", ["user_id"], :name => "index_places_on_user_id"
 
   create_table "users", :force => true do |t|
@@ -69,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20110709030344) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

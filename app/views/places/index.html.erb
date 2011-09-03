@@ -1,27 +1,5 @@
-<!--visualizacion para los admin-->
-<table summary="In this table we show the different places that match a certain search criteria">
-  <tr>
-    <th>Nombre</th>
-    <th>Cat. Sitio</th>
-    <th>Cat. Dinero</th>
-    <th>Cat. Abierto</th>    
-
-  </tr>
-  <% for place in @places %>
-    <tr>
-      <td><%=h place.name %></td>
-      <td><%=h place.cplace.name %></td>
-      <td><%=h place.cmoney.name %></td>
-      <td><%=h place.copen.name %></td>
-      <td><%= link_to "Mostrar", place %></td>
-      <td><%= link_to "Editar", edit_place_path(place) %></td>
-      <td><%= link_to "Eliminar", place, :confirm => 'Está seguro de que quiere destruir este sitio?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "Crear nuevo sitio", new_place_path %></p>
-
+<% if current_user and (current_user.role?('megaadmin') || current_user.role?('admin'))%>
+<%= render :partial => "admininterface" %><% end -%>
 
 <h2>Sitios que concuerdan con tus criterios de búsqueda:</h2>
 <div class="listadobonito">

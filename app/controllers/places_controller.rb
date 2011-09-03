@@ -2,25 +2,11 @@ class PlacesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   def index
     @title = "Sitios"
-    
-    case params[:category]
-    
-    when 'rumba'
-      @places = Place.find_all_by_cplace_id(1)
-      
-    when 'cultural'
-      @places = Place.find_all_by_cplace_id(2)
-      
-    when 'gastronomia'
-      @places = Place.find_all_by_cplace_id(3)
-      
-    when 'turistico'
-      @places = Place.find_all_by_cplace_id(4)
-      
-    else 
+    if params[:category]
+      @places = Place.where("cplace_id = ?", params[:category])
+    else
       @places = Place.all
-    end
-    
+    end    
   end
   
 ###############  
@@ -30,7 +16,7 @@ class PlacesController < ApplicationController
     @title = @place.name
   end
     
-  #############
+###############
   
   def new
     @title = "Nuevo Sitio"

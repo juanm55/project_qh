@@ -1,5 +1,29 @@
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :encryptable, :confirmable,  :timeoutable and :omniauthable  :lockable,
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  
+  has_many :places
+  
+  ROLES = %w[megaadmin admin owner basic]
+  
+  
+#  metodo para devolver el boolean de si el rol conincide con el ingresado
+  def role?(role)
+    if self.role == role
+      true
+    else
+      false
+    end
+  end
+  
+end
+
 # == Schema Information
-# Schema version: 20110701022536
 #
 # Table name: users
 #
@@ -16,16 +40,6 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  role                   :string(255)
 #
 
-class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable,  :timeoutable and :omniauthable  :lockable,
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  
-  has_many :places
-end

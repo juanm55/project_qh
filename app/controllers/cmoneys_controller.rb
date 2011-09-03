@@ -3,15 +3,15 @@ class CmoneysController < ApplicationController
   
   def index
     @cmoneys = Cmoney.all
-    @title = "Categorias de Dinero"
+    @title = "Categorías de Dinero"
   end
   
   #############
   
-  def show
-    @cmoney = Cmoney.find(params[:id])
-    @title = "Categorias -> #{@cmoney.name}"
-  end
+  # def show          Deprecated since it is no use to the bussines model
+  #   @cmoney = Cmoney.find(params[:id])
+  #   @title = "Categorias -> #{@cmoney.name}"
+  # end
   
   #############
   

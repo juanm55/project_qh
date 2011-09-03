@@ -1,18 +1,15 @@
-<% semantic_form_for @place do |f| %>
-<% f.inputs do %>
-    <%= f.input :name,                    :label => 'Nombre', :hint => 'El nombre con el que se conoce tu establecimiento'%>
-    
-    
-    <%= f.input :cplace,                  :label => 'Categoria del sitio', :hint => 'Agrupa tu establecimiento en estas categorías según creas que tu establecimiento cabe dentro de ellas, no olvides mencionar uno o dos aspectos por los cuales perteneces a estas categorías en tu descripción'%>
-    
-    
-    <%= f.input :cmoney,                  :label => 'Dinero requerido', :hint => 'Es la cantidad de dinero promedio que necesita una persona para tener una buena experiencia en tu sitio, incluye el cover básico'%>
-    
-    <%= f.input :copen,                   :label => 'Horario', :hint => 'Elige la franja de horario en el cual tienes mas clientes comunmente'%>    
-    
-    <%= f.input :description,             :label => 'Descripcion', :hint => 'La descripción que aparecerá en la visualizacion de tu sitio, procura que sea corta pero cautivante, menciona horarios de atención, ventajas estratégicas (Parqueadero cercano, buena ubicación...)'%>
-  <% end %>
-<%= f.buttons do %>
-      <%= f.commit_button 'Crear' %>
-<% end %>
-<% end %>
+<% form_for @place do %>
+
+<%= text_field :model, :attribute %>
+
+<%= select_tag "cplace_id", options_from_collection_for_select(Cplace.all, :id, :name) %>
+
+<%= select_tag "cmoney_id", options_from_collection_for_select(Cmoney.all, :id, :name) %>
+
+<%= select_tag "copen_id", options_from_collection_for_select(Copen.all, :id, :name) %>
+
+<%= submit_tag "Crear" %>
+
+<% end -%>
+
+
