@@ -1,6 +1,9 @@
+# encoding: utf-8
 class CopensController < ApplicationController
   before_filter :authenticate_user!
-
+  
+  authorize_resource
+  skip_authorize_resource :only => :index
   def index
     @copens = Copen.all
     @title = "Categorias de Horario"
@@ -8,7 +11,7 @@ class CopensController < ApplicationController
   
   #############
   
-#  def show                 #No es necesario dada la informacion que se puede visualizar en Index###
+#  def show    #Not needed due to info available in index
 #    @copen = Copen.find(params[:id])
 #    @title = "Categorias -> #{@copen.name}"
 #  end
@@ -16,7 +19,7 @@ class CopensController < ApplicationController
   #############
   
   def new
-    @title = "Nueva Categoria de horario"
+    @title = "Nueva Categoría de horario"
     @copen = Copen.new
   end
   

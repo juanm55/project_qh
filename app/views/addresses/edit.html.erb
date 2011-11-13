@@ -1,0 +1,9 @@
+<h1><%= t('editing')+' '+ t('activerecord.models.address.one') %> </h1>
+
+<%= render 'form' %>
+
+<% if params[:place_id] -%>
+  <%= link_to 'Back', {:controller => 'places', :action => 'edit', :id => params[:place_id]} %>
+<% else -%>
+  <%= link_to 'Back', '/' %>
+<% end -%>

@@ -1,15 +1,47 @@
-<% form_for @place do %>
+<% semantic_form_for @place do |f| %>
+  <% f.inputs do %>
+    <%= f.input :name, :label => 'Nombre', :hint => 'El nombre con el que se conoce tu establecimiento'%>
+    
+    <%= f.input :cmoney, :label => 'Dinero requerido', :hint => 'Es la cantidad de dinero promedio que necesita una persona para tener una buena experiencia en tu sitio, incluye el cover básico'%>
+      
+    <%= f.input :copen, :label => 'Horario', :hint => 'Elige la franja de horario en el cual tienes mas clientes comunmente'%>
+      
+    <%= f.input :description, :label => 'Descripción', :hint => 'La descripción que aparecerá en la visualizacion de tu sitio, procura que sea corta pero cautivante'%>
+  <% end %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>
 
-<%= text_field :model, :attribute %>
+<h3><%= t('linked_addresses') %></h3>
+<table>
+  <tr>
+    <th><%= t('activerecord.models.address.other') %></th>
+    <th><%= t('description') %></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-<%= select_tag "cplace_id", options_from_collection_for_select(Cplace.all, :id, :name) %>
+  <% @place.addresses.each do |address| %>
+    <tr>
+      <%= '<b>'.html_safe if address.main_venue -%>
+      
+      <td><%= address.name %></td>
+      <td><%= address.description %></td>
+      
+      <td><%= link_to 'Edit', edit_address_path(address, :place_id => @place.id.to_s) %></td>
+      <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete, :place_id => @place.id.to_s %></td>
+      
+      <%= '</b>'.html_safe if address.main_venue -%>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="4"><%= link_to t('new_address'), new_address_path(:place_id => @place.id.to_s) %></td>
+  </tr>
+</table>
 
-<%= select_tag "cmoney_id", options_from_collection_for_select(Cmoney.all, :id, :name) %>
 
-<%= select_tag "copen_id", options_from_collection_for_select(Copen.all, :id, :name) %>
 
-<%= submit_tag "Crear" %>
 
-<% end -%>
 
 

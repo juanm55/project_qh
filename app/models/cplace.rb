@@ -11,10 +11,11 @@
 #
 
 class Cplace < ActiveRecord::Base
-
+  
   attr_accessible :name, :description
   
-  has_many :places
+  has_many :categorizations
+  has_many :objects, :through => :categorizations
   
   default_scope :order => 'name'
   

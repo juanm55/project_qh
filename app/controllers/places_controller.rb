@@ -1,9 +1,13 @@
 class PlacesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
+  
+  authorize_resource
+  skip_authorize_resource :only => [:index, :show]
+  
   def index
     @title = "Sitios"
     if params[:category]
-      @places = Place.where("cplace_id = ?", params[:category])
+      @places = Place.find(Categorization.where("cplace_id = ?", params[:category]).all)
     else
       @places = Place.all
     end    
@@ -20,14 +24,14 @@ class PlacesController < ApplicationController
   
   def new
     @title = "Nuevo Sitio"
-    @place= Place.new
+    @place = Place.new
   end
   
 ###############
   
   def create
     @place = Place.new(params[:place])
-    #@place.user_id = current_user.id
+    
     if @place.save
       flash[:notice] = "Sitio creado."
       redirect_to places_path
@@ -42,7 +46,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
   
-  #############
+#############
   
   def destroy
     @place = Place.find(params[:id])

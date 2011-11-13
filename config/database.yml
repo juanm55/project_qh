@@ -7,9 +7,9 @@
 #  timeout: 5000
   
 development:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
-  database: qh_development
+  database: qh_DEV
   pool: 5
   username: root
   password:

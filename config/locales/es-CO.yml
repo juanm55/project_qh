@@ -202,8 +202,44 @@ es:
         accepted: "debe ser aceptado"
         even: "debe ser un número par"
         odd: "debe ser un número impar"
-
+  
+#  just a space for commonly used strings
+  name: 'Nombre'
+  description: 'Descripción'
+  main_venue: 'Sede principal'
+  linked_addresses: 'Ubicaciones vinculadas a este sitio'
+  new_address: 'Añadir nueva Ubicación'
+  edit: 'Editar'
+  editing: 'Editando'
+  
   activerecord:
+##################
+    models:
+      address: 
+        one: "Ubicación"
+        other: 'Ubicaciones'
+      
+      place:
+        one: 'Sitio'
+        other: 'Sitios'
+      
+      cplace:
+        one: 'Categoría de Sitio'
+        other: 'Categorías de Sitio'
+      
+      cmoney:
+        one: 'Categoría de Dinero'
+        other: 'Categorías de Dinero'
+        
+      copen:
+        one: 'Categoría de Horario'
+        other: 'Categorías de Horario'
+        
+      user:
+        one: 'Usuario'
+        other: 'Usuarios'
+#################        
+    
     errors:
       template:
         header:
@@ -212,7 +248,7 @@ es:
         body: "Revise que los siguientes campos sean válidos:"
 
       messages:
-        taken: "ya ha sido tomado"
+        taken: "ya existe"
         record_invalid: "La validación falló: %{errors}"
         <<: *errors_messages
 
@@ -234,14 +270,15 @@ es:
         cplace:
           attributes:
             name:
-              taken: "Esta categoria ya existe"
+              taken: "Esta categoría ya existe"
               
         cmoney:
           attributes:
             name:
-              taken: "Esta categoria ya existe"
+              taken: "Esta categoría ya existe"
               
         copen:
           attributes:
             name:
-              taken: "Esta categoria ya existe"              
+              taken: "Esta categoría ya existe"
+      

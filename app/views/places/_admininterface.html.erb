@@ -4,13 +4,15 @@
     <th>Nombre</th>
     <th>Cat. Sitio</th>
     <th>Cat. Dinero</th>
-    <th>Cat. Abierto</th>    
+    <th>Cat. Abierto</th>
 
   </tr>
   <% for place in @places %>
     <tr>
       <td><%= place.name %></td>
-      <td><%= place.cplace.name %></td>
+      <td><% place.cplaces.each do |a| %>
+      <%= a.name %>
+      <% end %></td>
       <td><%= place.cmoney.name %></td>
       <td><%= place.copen.name %></td>
       <td><%= link_to "Mostrar", place %></td>

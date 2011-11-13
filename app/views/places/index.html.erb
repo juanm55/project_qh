@@ -3,10 +3,12 @@
 
 <h2>Sitios que concuerdan con tus criterios de búsqueda:</h2>
 <div class="listadobonito">
-  <% for place in @places %>
+  <% @places.each do |place| %>
+
     <p class="indplacesmoney"><%= number_to_currency(place.cmoney.name)%> <br /><%= place.copen.name%></p>
-    <h3 class="indplacesname"><%=link_to place.name, place%></h3>
+    <h3 class="indplacesname"><%= link_to place.name, place %></h3>
     <p class="indplacesdescr"><%= place.description[0..100] %></p>
   <% end %>
-  
-</div>  
+
+</div>
+

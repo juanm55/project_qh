@@ -1,18 +1,33 @@
-<div class="float-right">
-  <% logo = image_tag("rect2995.png", :alt => "Rumba", :class => "round") %>
-  <%= link_to logo, {:controller => 'places', :action => 'index', :category => 1} %>
-  <br />
-  <br />
-  <% logo = image_tag("turismo_grande.png", :alt => "Turístico", :class => "round") %>
-  <%= link_to logo, {:controller => 'places', :action => 'index', :category => 4} %>
-    
-</div>
+<table class="mainselector">
+  <tr>
+    <!-- selector para gastronomia -->
+    <td><%= link_to "<div class='upleft littlesection'><div class='innertext'>
 
-<div class="float-left">
-  <% logo = image_tag("gastronomia_grande.png", :alt => "Gastronomía", :class => "round") %>
-  <%= link_to logo, {:controller => 'places', :action => 'index', :category => 3} %>
-  <br />
-  <br />
-  <% logo = image_tag("cultura_grande.png", :alt => "Cultural", :class => "round") %>
-  <%= link_to logo, {:controller => 'places', :action => 'index', :category => 2} %>
-</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+      <p>consectetur adipiscing elit. Vivamus nec ipsum id justo blandit adipiscing in eget turpisdiollicitudin</p></div></div>".html_safe, {:controller => 'places', :action => 'index', :category => 3}%></td>
+
+    <!-- selector para rumba -->
+    <td><%= link_to "<div class='upright littlesection'><div class='innertext'>
+
+    <p>Lorem ipsum dolor sit amet, consecteivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet, consectet. Vivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+      </div></div>".html_safe, {:controller => 'places', :action => 'index', :category => 1}%></td>
+  </tr>
+
+  <tr>
+    <!-- selector para cultura -->
+    <td><%= link_to "<div class='downleft littlesection'><div class='innertext'>
+
+    <p>Lorem ipsum dolor sit amet, consecteivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet, consectet. Vivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+      </div></div>".html_safe, {:controller => 'places', :action => 'index', :category => 2}%></td>
+
+    <!-- selector para turismo -->
+    <td><%= link_to "<div class='downright littlesection'><div class='innertext'>
+
+    <p>Lorem ipsum dolor sit amet, consecteivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet, consectet. Vivamus nec ipsum id justo blandit urpis. Aliquam bibendum odio quidolor sit amet</p>
+      </div></div>".html_safe, {:controller => 'places', :action => 'index', :category => 4}%></td>
+  </tr>
+</table>
+

@@ -7,6 +7,7 @@ class PlaceTest < ActiveSupport::TestCase
   end
 end
 
+
 # == Schema Information
 #
 # Table name: places
@@ -14,7 +15,6 @@ end
 #  id          :integer(4)      not null, primary key
 #  user_id     :integer(4)
 #  name        :string(255)
-#  cplace_id   :integer(4)
 #  cmoney_id   :integer(4)
 #  copen_id    :integer(4)
 #  description :string(255)

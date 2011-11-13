@@ -1,5 +1,9 @@
 Qh::Application.routes.draw do
-
+  
+  resources :addresses, :except => [:show, :index]
+  
+  resources :categorizations
+  
   resources :places
   resources :cplaces
   resources :cmoneys, :except => :show

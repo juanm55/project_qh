@@ -3,13 +3,13 @@
     <th>Nombre</th>
 
   </tr>
-  <% for cmoney in @cmoneys %>
+  <% @cmoneys.each do |cmoney| %>
     <tr>
       <td><%=h cmoney.name %></td>
-      <td><%= link_to "Edit", edit_cmoney_path(cmoney) %></td>
-      <td><%= link_to "Destroy", cmoney, :confirm => 'Está seguro de que quiere destruir esta categoría?', :method => :delete %></td>
+      <td><%= link_to ("Edit", edit_cmoney_path(cmoney))  if can?(:edit, cmoney)%></td>
+      <td><%= link_to ("Destroy", cmoney, :confirm => 'Está seguro de que quiere destruir la categoría ' + cmoney.name.to_s, :method => :delete) if can?(:edit, cmoney) %></td>
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "Crear nueva categoría", new_cmoney_path %></p>
+<p><%= link_to ("Crear nueva categoría", new_cmoney_path) if can?(:create, cmoney) %></p>
