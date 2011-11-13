@@ -1,16 +1,32 @@
 <h1><%= @place.name%></h1>
 
-<br/>
-
-<p><%= @place.description%>
-</p>
+<h2><%= t('description') %></h2>
+<p><%= @place.description%></p>
 
 <p>Nuestras categorizaciones:</p>
 
 <ul>
-  <li>Nuestro sitio está especialmente recomendado si buscas <%= @place.cplace.name %></li>
-  <li>Te recomendamos traer aproximadamente <%= number_to_currency(@place.cmoney.name) %> para que disfrutes de una buena gama de nuestros servicios</li>
-  <li>Nuestro horario es mayormente <%= @place.copen.name %></li>
+  <li>Nuestro sitio está especialmente recomendado si buscas:
+    <ul>
+      <% @place.cplaces.each do |a| %></li>
+        <li><%= a.name %>: <%= a.description %></li>
+      <% end -%>
+    </ul>
+
+  <li>Te recomendamos traer aproximadamente <%= number_to_currency(@place.cmoney.name) %> para que disfrutes de una buena gama de nuestros servicios.</li>
+
+  <li>Nuestro horario es mayormente <%= @place.copen.name %>.</li>
 </ul>
 
+<p>Nuestras ubicaciones:</p>
+<ul>
+  <% @place.addresses.each do |address| -%>
+    <li><%= address.name %><%= ': '+address.description if !address.description.empty? %></li>
+  <% end -%>
+</ul>
+<!-- main venue y luego alfabeticamente -->
+
+
+
 <p>Te esperamos.</p>
+

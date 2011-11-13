@@ -1,21 +1,26 @@
+# encoding: utf-8
 class CplacesController < ApplicationController
   before_filter :authenticate_user!
+  
+  authorize_resource
+  skip_authorize_resource :only => [:index, :show]
+  
   def index
     @cplaces = Cplace.all
-    @title = "Categorias de Sitios"
+    @title = "Categorías de Sitios"
   end
   
   #############
   
   def show
     @cplace = Cplace.find(params[:id])
-    @title = "Categorias -> #{@cplace.name}"
+    @title = "Categorías -> #{@cplace.name}"
   end
   
   #############
   
   def new
-    @title = "Nueva Categoria de Sitios"
+    @title = "Nueva Categoría de Sitios"
     @cplace = Cplace.new
   end
   
@@ -24,7 +29,7 @@ class CplacesController < ApplicationController
   def create
     @cplace = Cplace.new(params[:cplace])
     if @cplace.save
-      flash[:notice] = 'Categoria de sitio creada.'
+      flash[:notice] = 'Categoría de sitio creada.'
       redirect_to cplaces_path
     else
       render :action => 'new'
@@ -34,7 +39,7 @@ class CplacesController < ApplicationController
   #############
   
   def edit
-     @cplace = Cplace.find(params[:id])
+    @cplace = Cplace.find(params[:id])
   end
   
   #############
@@ -42,7 +47,7 @@ class CplacesController < ApplicationController
   def update
     @cplace = Cplace.find(params[:id])
     if @cplace.update_attributes(params[:cplace])
-      flash[:notice] = "Categoria actualizada."
+      flash[:notice] = "Categoría actualizada."
       redirect_to @cplace
     else
       render :action => 'edit'
@@ -55,7 +60,7 @@ class CplacesController < ApplicationController
   def destroy
     @cplace = Cplace.find(params[:id])
     @cplace.destroy
-    flash[:notice] = "Categoria destruida."
+    flash[:notice] = "Categoría destruida."
     redirect_to cplaces_path
   end
   

@@ -1,18 +1,47 @@
 <% semantic_form_for @place do |f| %>
-<% f.inputs do %>
-    <%= f.input :name,                    :label => 'Nombre', :hint => 'El nombre con el que se conoce tu establecimiento'%>
+  <% f.inputs do %>
+    <%= f.input :name, :label => 'Nombre', :hint => 'El nombre con el que se conoce tu establecimiento'%>
     
-    
-    <%= f.input :cplace,                  :label => 'Categoria del sitio', :hint => 'Agrupa tu establecimiento en estas categorías según creas que tu establecimiento cabe dentro de ellas, no olvides mencionar uno o dos aspectos por los cuales perteneces a estas categorías en tu descripción'%>
-    
-    
-    <%= f.input :cmoney,                  :label => 'Dinero requerido', :hint => 'Es la cantidad de dinero promedio que necesita una persona para tener una buena experiencia en tu sitio, incluye el cover básico'%>
-    
-    <%= f.input :copen,                   :label => 'Horario', :hint => 'Elige la franja de horario en el cual tienes mas clientes comunmente'%>    
-    
-    <%= f.input :description,             :label => 'Descripcion', :hint => 'La descripción que aparecerá en la visualizacion de tu sitio, procura que sea corta pero cautivante, menciona horarios de atención, ventajas estratégicas (Parqueadero cercano, buena ubicación...)'%>
+    <%= f.input :cmoney, :label => 'Dinero requerido', :hint => 'Es la cantidad de dinero promedio que necesita una persona para tener una buena experiencia en tu sitio, incluye el cover básico'%>
+      
+    <%= f.input :copen, :label => 'Horario', :hint => 'Elige la franja de horario en el cual tienes mas clientes comunmente'%>
+      
+    <%= f.input :description, :label => 'Descripción', :hint => 'La descripción que aparecerá en la visualizacion de tu sitio, procura que sea corta pero cautivante'%>
   <% end %>
-<%= f.buttons do %>
-      <%= f.commit_button 'Crear' %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
 <% end %>
-<% end %>
+
+<h3><%= t('linked_addresses') %></h3>
+<table>
+  <tr>
+    <th><%= t('activerecord.models.address.other') %></th>
+    <th><%= t('description') %></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @place.addresses.each do |address| %>
+    <tr>
+      <%= '<b>'.html_safe if address.main_venue -%>
+      
+      <td><%= address.name %></td>
+      <td><%= address.description %></td>
+      
+      <td><%= link_to 'Edit', edit_address_path(address, :place_id => @place.id.to_s) %></td>
+      <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete, :place_id => @place.id.to_s %></td>
+      
+      <%= '</b>'.html_safe if address.main_venue -%>
+    </tr>
+  <% end %>
+  <tr>
+    <td colspan="4"><%= link_to t('new_address'), new_address_path(:place_id => @place.id.to_s) %></td>
+  </tr>
+</table>
+
+
+
+
+
+

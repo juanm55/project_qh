@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  place_id: 1
+  cplace_id: 1
+  maincplace: false
+
+two:
+  place_id: 1
+  cplace_id: 1
+  maincplace: false
+
+# == Schema Information
+#
+# Table name: categorizations
+#
+#  id         :integer(4)      not null, primary key
+#  place_id   :integer(4)
+#  cplace_id  :integer(4)
+#  maincplace :boolean(1)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

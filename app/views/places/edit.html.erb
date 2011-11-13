@@ -1,7 +1,5 @@
-<h1>Editar Sitio</h1>
+<h2><%= t('edit')+' '+t('activerecord.models.place.one') %></h2>
+
+<%= link_to "Mostrar", @place %> | <%= link_to "Mostrar todas", places_path%>
 
 <%= render :partial => 'form' %>
-
-<p>
-  <%= link_to "Mostrar", @place %> | <%= link_to "Mostrar todas", places_path%>
-</p>

@@ -1,0 +1,25 @@
+<!--visualizacion para los admin-->
+<table summary="In this table we show the different places that match a certain search criteria">
+  <tr>
+    <th>Nombre</th>
+    <th>Cat. Sitio</th>
+    <th>Cat. Dinero</th>
+    <th>Cat. Abierto</th>
+
+  </tr>
+  <% for place in @places %>
+    <tr>
+      <td><%= place.name %></td>
+      <td><% place.cplaces.each do |a| %>
+      <%= a.name %>
+      <% end %></td>
+      <td><%= place.cmoney.name %></td>
+      <td><%= place.copen.name %></td>
+      <td><%= link_to "Mostrar", place %></td>
+      <td><%= link_to "Editar", edit_place_path(place) if can?(:edit, place) %></td>
+      <td><%= link_to "Eliminar", place, :confirm => 'Está seguro de que quiere destruir este sitio?', :method => :delete if(can?(:delete, place))%></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "Crear nuevo sitio", new_place_path if(can?(:create, Place))%></p>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Place:</b>
+  <%= @categorization.place_id %>
+</p>
+
+<p>
+  <b>Cplace:</b>
+  <%= @categorization.cplace_id %>
+</p>
+
+<p>
+  <b>Maincplace:</b>
+  <%= @categorization.maincplace %>
+</p>
+
+
+<%= link_to 'Edit', edit_categorization_path(@categorization) %> |
+<%= link_to 'Back', categorizations_path %>

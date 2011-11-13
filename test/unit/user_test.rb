@@ -7,6 +7,8 @@ class UserTest < ActiveSupport::TestCase
   end
 end
 
+
+
 # == Schema Information
 #
 # Table name: users
@@ -22,6 +24,8 @@ end
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  role                   :string(255)
+#  show_name              :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
 #
