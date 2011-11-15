@@ -1,14 +1,35 @@
 <footer>
-  <nav class="round">
-    <ul>
-      <li><%= link_to "Contacto", contact_path %></li>
-      <li><%= link_to "Acerca de nosotros", about_path %></li>
-      <% if current_user -%>
-        <li><%= current_user.show_name %> </li>
-        <li><%= link_to "Logout", "/logout" if current_user %></li>
-      <% else -%>
-        <li><%= link_to 'Login', "/login" %></li>
-      <% end -%>
-    </ul>
-  </nav>
+  <div class="barrita gradient"></div>
+  <div class="center">
+    <table>
+      <tr>
+        <td valign="top">
+          <nav>
+            <ul>
+              <li><%= link_to "Contacto", contact_path %></li>
+              <li><%= link_to "Acerca de nosotros", about_path %></li>
+
+              <% if current_user -%>
+                <li><%= current_user.show_name %> </li>
+                <li><%= link_to "Logout", "/logout" if current_user %></li>
+              <% else -%>
+                <li><%= link_to 'Login', "/login" %></li>
+              <% end -%>
+
+            </ul>
+
+          </nav></td>
+
+        <td valign="top"><div class="red-paper">red paper</div></td>
+      </tr>
+    </table>
+  </div>
 </footer>
+
+
+<!-- <nav class="round">
+
+
+
+</nav> -->
+
