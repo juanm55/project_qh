@@ -1,11 +1,14 @@
-h1. qh
-
 Bienvenido al proyecto de QH!
 
 h2. Team mates: 
 
-* Juan Manuel López, aka Juambo 
+* Juan LF, aka Juambo & CDO
 * Felipe Gómez, aka Pipe 
 * Juan Eduardo Escobar, aka Gordo.
 
 Bye.
+
+
+porque?
+
+bq. Talk is cheap. Show me the code. ~Linus Torvalds
