@@ -25,14 +25,32 @@ h1{
 
 .mainselector{margin:0 auto;padding:0;}
 
-.mainselector td{width:400px;height:355px;margin:0;padding:0;}
+.mainselector td{width:400px;height:355px;margin:0;padding:0;color:red;}
 
 .upleft{background: url(../images/gastro.png) left top no-repeat;}
 .upright{background: url(../images/rumb.png) left top no-repeat;}
 .downleft{background: url(../images/cult.png) left top no-repeat;}
 .downright{background: url(../images/tur.png) left top no-repeat;}
 
-.selector-text{width:320px;height:200px;padding:100px 0px 30px 60px;margin:0;overflow:hidden;text-overflow:ellipsis;color:red;}
+.sel_container{width:350px;height:325px;
+margin:40px 20px 20px 30px;padding:0;}
+
+.sel_text{width:300px;height:200px;
+position:relative;top:-70px;left:40px;
+padding:0;margin:0;
+overflow:hidden;text-overflow:ellipsis;}
+
+.gastro{position:relative;top:0;left:0;width:100px;height:150px;background: url(../images/gast_off.png) left top no-repeat;}
+.gastro:hover{background: url(../images/gast_hover.png) left top no-repeat;}
+
+.rumb{position:relative;top:0;left:0;width:100px;height:150px;background: url(../images/rumb_off.png) left top no-repeat;}
+.rumb:hover{background: url(../images/rumb_hover.png) left top no-repeat;}
+
+.cult{position:relative;top:0;left:0;width:100px;height:150px;background: url(../images/cult_off.png) left top no-repeat;}
+.cult:hover{background: url(../images/cult_hover.png) left top no-repeat;}
+
+.tur{position:relative;top:0;left:0;width:100px;height:150px;background: url(../images/tur_off.png) left top no-repeat;}
+.tur:hover{background: url(../images/tur_hover.png) left top no-repeat;}
 
 /* estilos del footer */
 
@@ -121,20 +139,6 @@ a:visited{color: #069;}
 
 
 Navigation
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
